@@ -6,15 +6,14 @@ import 'package:home_automation/screens/login_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(FlashChat());
+  runApp(EZHome());
 }
 
-class FlashChat extends StatelessWidget {
+class EZHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginScreen(),
-      initialRoute: LoginScreen.id,
+      initialRoute: DashboardScreen.id,
       routes: {
         LoginScreen.id: (context) => LoginScreen(),
         DashboardScreen.id: (context) => DashboardScreen(),

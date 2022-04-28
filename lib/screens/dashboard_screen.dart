@@ -40,8 +40,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Living Room'),
-                Text('Bedroom 1'),
-                Text('Bedroom 2'),
+                Text('Bedroom'),
+                // Text('Bedroom 2'),
               ],
             ),
           ),
@@ -51,7 +51,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               children: [
                 LivingRoomPage(),
                 Bedroom1Page(),
-                Bedroom2Page(),
+                // Bedroom2Page(),
               ],
             ),
           ),

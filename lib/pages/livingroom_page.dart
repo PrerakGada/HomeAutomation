@@ -35,14 +35,20 @@ class _LivingRoomPageState extends State<LivingRoomPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IotCard(
-                        isOn: switches[0].get('1'),
+                        isOn: switches[1].get('1'),
                         icon: Icons.lightbulb_outline,
                         name: 'Main Light',
+                        toggleFunction: (val) {
+                          _firestore.collection('devices').doc('living_room').update({'1':val});
+                        },
                       ),
                       IotCard(
-                        isOn: switches[0].get('2'),
+                        isOn: switches[1].get('2'),
                         icon: Icons.air,
-                        name: 'Air Conditioner',
+                        name: 'Fan',
+                          toggleFunction: (val) {
+                            _firestore.collection('devices').doc('living_room').update({'2':val});
+                          }
                       ),
                     ],
                   );

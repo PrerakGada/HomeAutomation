@@ -5,22 +5,32 @@ class IotCard extends StatefulWidget {
   final IconData icon;
   final bool isOn;
 
+  final Function toggleFunction;
+
   const IotCard({
     Key? key,
     required this.name,
-    required this.icon, required this.isOn,
+    required this.icon,
+    required this.isOn,
+    required this.toggleFunction,
   }) : super(key: key);
 
   @override
-  State<IotCard> createState() => _IotCardState(name, icon, isOn);
+  State<IotCard> createState() => _IotCardState(
+        name,
+        icon,
+        isOn,
+        toggleFunction,
+      );
 }
 
 class _IotCardState extends State<IotCard> {
   final String name;
   final IconData icon;
   bool isOn;
+  final Function toggleFunction;
 
-  _IotCardState(this.name, this.icon, this.isOn);
+  _IotCardState(this.name, this.icon, this.isOn, this.toggleFunction);
 
   void toggleSwitch(bool value) {
     if (isOn == false) {
@@ -32,6 +42,7 @@ class _IotCardState extends State<IotCard> {
         isOn = false;
       });
     }
+    toggleFunction(isOn);
   }
 
   @override
@@ -69,10 +80,9 @@ class _IotCardState extends State<IotCard> {
               Text(
                 name,
                 style: TextStyle(
-                  color: isOn ? Colors.white : Colors.black,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold
-                ),
+                    color: isOn ? Colors.white : Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
               Icon(
                 icon,

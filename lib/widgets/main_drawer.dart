@@ -18,7 +18,7 @@ class MainDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Prerak',
+                  'Shubh',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 TextButton(

@@ -35,16 +35,17 @@ class _Bedroom2PageState extends State<Bedroom2Page> {
                       isOn: switches[2].get('1'),
                       icon: Icons.lightbulb_outline,
                       name: 'Main Light',
+                      toggleFunction: () {},
                     ),
                     IotCard(
                       isOn: switches[2].get('2'),
                       icon: Icons.air,
                       name: 'Air Conditioner',
+                      toggleFunction: () {},
                     ),
                   ],
                 );
-              }
-          ),
+              }),
         ],
       ),
     );
